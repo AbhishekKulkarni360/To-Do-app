@@ -1,0 +1,146 @@
+:root {
+  --theme-color: #00bcd4;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f0f0f0;
+}
+
+/* Themed Elements */
+h1 {
+  color: var(--theme-color);
+}
+
+.btn-primary,
+.btn-info,
+.btn-outline-info.btn-info {
+  background-color: var(--theme-color) !important;
+  border-color: var(--theme-color) !important;
+  color: white !important;
+}
+
+.btn-outline-info:hover {
+  background-color: var(--theme-color) !important;
+  color: white !important;
+}
+
+/* Inputs in Dark Mode */
+.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode input,
+.dark-mode .form-control,
+.dark-mode .btn {
+  background-color: #2a2a2a;
+  color: #f0f0f0; /* <-- Input text color */
+  border-color: #444;
+}
+
+/* Placeholder color in dark mode */
+.dark-mode input::placeholder,
+.dark-mode .form-control::placeholder {
+  color: #bbb; /* lighter placeholder for visibility */
+}
+
+.dark-mode .form-check-label {
+  color: #e0e0e0;
+}
+
+.dark-mode .completed {
+  color: #999;
+}
+
+.dark-mode .btn-outline-dark,
+.dark-mode .btn-outline-success,
+.dark-mode .btn-outline-warning,
+.dark-mode .btn-outline-info {
+  color: #eee;
+  border-color: #666;
+}
+
+.dark-mode .btn-outline-dark:hover,
+.dark-mode .btn-outline-success:hover,
+.dark-mode .btn-outline-warning:hover,
+.dark-mode .btn-outline-info:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Due Date Tag */
+.task-due-date {
+  font-size: 0.75rem;
+  color: #ffa726;
+  background-color: #444;
+  padding: 2px 6px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* Task Spacing & Card Feel */
+#taskList .list-group-item {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+#taskList .list-group-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Drag-and-Drop Styling */
+.dragging {
+  opacity: 0.5;
+  background-color: #555 !important;
+  border: 2px dashed #888 !important;
+  cursor: grabbing;
+}
+
+.list-group-item.drag-over {
+  border: 2px dashed var(--theme-color);
+  background-color: rgba(0, 188, 212, 0.1);
+  transition: background-color 0.2s, border 0.2s;
+}
+
+.dark-mode .list-group-item.drag-over {
+  background-color: rgba(0, 188, 212, 0.2);
+  border-color: var(--theme-color);
+}
+
+/* Responsive Tuning */
+@media (max-width: 576px) {
+  .list-group-item .form-check-label {
+    font-size: 0.9rem;
+  }
+
+  .list-group-item button {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Focus styles for accessibility */
+input:focus,
+button:focus {
+  outline: 3px solid var(--theme-color);
+  outline-offset: 2px;
+  transition: outline-color 0.3s ease;
+}
+
+/* Smooth hover/focus transitions */
+button,
+input {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
